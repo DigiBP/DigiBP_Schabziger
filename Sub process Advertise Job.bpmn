@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1u75bas" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
+  <bpmn:process id="Process_14on2cs" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Job needs to be advertised">
+      <bpmn:outgoing>SequenceFlow_180a53e</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_0xivxx4" name="Prepare the Job annoucement">
+      <bpmn:incoming>SequenceFlow_180a53e</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1x2n8wn</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_180a53e" sourceRef="StartEvent_1" targetRef="Task_0xivxx4" />
+    <bpmn:task id="Task_1w63qg3" name="Publish Job annoucement on platforms">
+      <bpmn:incoming>SequenceFlow_1x2n8wn</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_1x2n8wn" sourceRef="Task_0xivxx4" targetRef="Task_1w63qg3" />
+    <bpmn:task id="Task_089cni5" name="Delete Job annoucement on platform">
+      <bpmn:incoming>SequenceFlow_0wu7p8c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0gue422</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_0wu7p8c" sourceRef="IntermediateThrowEvent_0iu2chg" targetRef="Task_089cni5" />
+    <bpmn:task id="Task_0l5ao5i" name="Report analytical data about Job anoucement">
+      <bpmn:incoming>SequenceFlow_0gue422</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1omu6tj</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_0gue422" sourceRef="Task_089cni5" targetRef="Task_0l5ao5i" />
+    <bpmn:endEvent id="EndEvent_1l721z2" name="Job was advertised">
+      <bpmn:incoming>SequenceFlow_1omu6tj</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1omu6tj" sourceRef="Task_0l5ao5i" targetRef="EndEvent_1l721z2" />
+    <bpmn:boundaryEvent id="IntermediateThrowEvent_0iu2chg" name="Job has been filled" attachedToRef="Task_1w63qg3">
+      <bpmn:outgoing>SequenceFlow_0wu7p8c</bpmn:outgoing>
+    </bpmn:boundaryEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_14on2cs">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="142" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0xivxx4_di" bpmnElement="Task_0xivxx4">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_180a53e_di" bpmnElement="SequenceFlow_180a53e">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1w63qg3_di" bpmnElement="Task_1w63qg3">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1x2n8wn_di" bpmnElement="SequenceFlow_1x2n8wn">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_089cni5_di" bpmnElement="Task_089cni5">
+        <dc:Bounds x="690" y="117" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0wu7p8c_di" bpmnElement="SequenceFlow_0wu7p8c">
+        <di:waypoint x="548" y="157" />
+        <di:waypoint x="690" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0l5ao5i_di" bpmnElement="Task_0l5ao5i">
+        <dc:Bounds x="860" y="117" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0gue422_di" bpmnElement="SequenceFlow_0gue422">
+        <di:waypoint x="790" y="157" />
+        <di:waypoint x="860" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1l721z2_di" bpmnElement="EndEvent_1l721z2">
+        <dc:Bounds x="1032" y="139" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1025" y="182" width="51" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1omu6tj_di" bpmnElement="SequenceFlow_1omu6tj">
+        <di:waypoint x="960" y="157" />
+        <di:waypoint x="1032" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BoundaryEvent_18yy0dj_di" bpmnElement="IntermediateThrowEvent_0iu2chg">
+        <dc:Bounds x="512" y="139" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="497" y="182" width="67" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
