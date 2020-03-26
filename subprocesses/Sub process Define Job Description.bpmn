@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_147bcz2" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <bpmn:collaboration id="Collaboration_11fx9sv">
+    <bpmn:participant id="Participant_1aruzhd" processRef="Process_1dijog5" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1dijog5" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_1yekuri" sourceRef="StartEvent_Define_JD" targetRef="Activity_0c96cw3" />
+    <bpmn:sequenceFlow id="Flow_1buwqti" sourceRef="Activity_0c96cw3" targetRef="Activity_1ilo3ew" />
+    <bpmn:sequenceFlow id="Flow_17hgaoz" sourceRef="Activity_1ilo3ew" targetRef="Activity_0hy6rfp" />
+    <bpmn:sequenceFlow id="Flow_0cds2gc" sourceRef="Activity_0hy6rfp" targetRef="Activity_0l6v8qw" />
+    <bpmn:sequenceFlow id="Flow_0y4ct60" sourceRef="Activity_0l6v8qw" targetRef="Event_1r7posl" />
+    <bpmn:startEvent id="StartEvent_Define_JD">
+      <bpmn:outgoing>Flow_1yekuri</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1ilo3ew" name="Create a Job description according to the requirements of the department">
+      <bpmn:incoming>Flow_1buwqti</bpmn:incoming>
+      <bpmn:outgoing>Flow_17hgaoz</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0hy6rfp" name="Adjust the descrition to a format definde by the company">
+      <bpmn:incoming>Flow_17hgaoz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cds2gc</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0l6v8qw" name="Provide Job description">
+      <bpmn:incoming>Flow_0cds2gc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0y4ct60</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1r7posl">
+      <bpmn:incoming>Flow_0y4ct60</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_0c96cw3" name="Define Requirements with the requesting department">
+      <bpmn:incoming>Flow_1yekuri</bpmn:incoming>
+      <bpmn:outgoing>Flow_1buwqti</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_11fx9sv">
+      <bpmndi:BPMNShape id="Activity_1ilo3ew_di" bpmnElement="Activity_1ilo3ew">
+        <dc:Bounds x="360" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hy6rfp_di" bpmnElement="Activity_0hy6rfp">
+        <dc:Bounds x="480" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0l6v8qw_di" bpmnElement="Activity_0l6v8qw">
+        <dc:Bounds x="600" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1r7posl_di" bpmnElement="Event_1r7posl">
+        <dc:Bounds x="762" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1aruzhd_di" bpmnElement="Participant_1aruzhd" isHorizontal="true">
+        <dc:Bounds x="125" y="50" width="860" height="480" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_Define_JD">
+        <dc:Bounds x="179" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1yekuri_di" bpmnElement="Flow_1yekuri">
+        <di:waypoint x="197" y="242" />
+        <di:waypoint x="197" y="200" />
+        <di:waypoint x="280" y="200" />
+        <di:waypoint x="280" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1buwqti_di" bpmnElement="Flow_1buwqti">
+        <di:waypoint x="330" y="260" />
+        <di:waypoint x="345" y="260" />
+        <di:waypoint x="345" y="283" />
+        <di:waypoint x="360" y="283" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17hgaoz_di" bpmnElement="Flow_17hgaoz">
+        <di:waypoint x="460" y="260" />
+        <di:waypoint x="470" y="260" />
+        <di:waypoint x="470" y="290" />
+        <di:waypoint x="480" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cds2gc_di" bpmnElement="Flow_0cds2gc">
+        <di:waypoint x="580" y="260" />
+        <di:waypoint x="590" y="260" />
+        <di:waypoint x="590" y="290" />
+        <di:waypoint x="600" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0y4ct60_di" bpmnElement="Flow_0y4ct60">
+        <di:waypoint x="700" y="260" />
+        <di:waypoint x="762" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0fxioc5_di" bpmnElement="Activity_0c96cw3">
+        <dc:Bounds x="230" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
