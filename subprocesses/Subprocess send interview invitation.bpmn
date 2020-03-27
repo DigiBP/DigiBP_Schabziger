@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1b5i6qv" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <bpmn:collaboration id="Collaboration_059locm">
+    <bpmn:participant id="SendInvitation" name="Subprocess send interview invitationnd" processRef="SendInvitation1" />
+  </bpmn:collaboration>
+  <bpmn:process id="SendInvitation1" name="Subprocess send interview invitation" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_00q79h0" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_014tvbd</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1wsl7ry" name="create email for interview invitation">
+      <bpmn:incoming>Flow_014tvbd</bpmn:incoming>
+      <bpmn:outgoing>Flow_19l14o4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1xo78dj">
+      <bpmn:incoming>Flow_09wa4dd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_1eovbsc" name="send  inviatation to the candidate">
+      <bpmn:incoming>Flow_19l14o4</bpmn:incoming>
+      <bpmn:outgoing>Flow_09wa4dd</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_014tvbd" sourceRef="StartEvent_1" targetRef="Activity_1wsl7ry" />
+    <bpmn:sequenceFlow id="Flow_19l14o4" sourceRef="Activity_1wsl7ry" targetRef="Activity_1eovbsc" />
+    <bpmn:sequenceFlow id="Flow_09wa4dd" sourceRef="Activity_1eovbsc" targetRef="Event_1xo78dj" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_059locm">
+      <bpmndi:BPMNShape id="Participant_0ci65ln_di" bpmnElement="SendInvitation" isHorizontal="true">
+        <dc:Bounds x="170" y="95" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="259" y="198" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wsl7ry_di" bpmnElement="Activity_1wsl7ry">
+        <dc:Bounds x="350" y="176" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1xo78dj_di" bpmnElement="Event_1xo78dj">
+        <dc:Bounds x="672" y="198" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0wcub2m_di" bpmnElement="Activity_1eovbsc">
+        <dc:Bounds x="510" y="176" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_014tvbd_di" bpmnElement="Flow_014tvbd">
+        <di:waypoint x="295" y="216" />
+        <di:waypoint x="350" y="216" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19l14o4_di" bpmnElement="Flow_19l14o4">
+        <di:waypoint x="450" y="216" />
+        <di:waypoint x="510" y="216" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09wa4dd_di" bpmnElement="Flow_09wa4dd">
+        <di:waypoint x="610" y="216" />
+        <di:waypoint x="672" y="216" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
