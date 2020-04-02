@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1xzv5fp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1xzv5fp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_0spw3nf">
     <bpmn:participant id="Participant_0q19xlr" processRef="Process_1pp24sg" />
     <bpmn:participant id="Participant_1jlxsgw" name="Recruitement process" processRef="Process_0oclp21" />
@@ -14,7 +14,6 @@
         <bpmn:flowNodeRef>ExclusiveGateway_1orzzjx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1if7loe</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0491vse</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_0gdifi0</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1h0p7ix</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0moosnl</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_17dba2k</bpmn:flowNodeRef>
@@ -26,6 +25,7 @@
         <bpmn:flowNodeRef>Task_0u6xsev</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1prp1sa</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0msqpu7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0gdifi0</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0uf5j54" name="Candidate" />
       <bpmn:lane id="Lane_0ellxd3" name="Jobs platform" />
@@ -46,10 +46,6 @@
     <bpmn:endEvent id="EndEvent_0491vse" name="An employee is apointed to the job">
       <bpmn:incoming>SequenceFlow_1m4awr7</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:task id="Task_0gdifi0" name="Receive application">
-      <bpmn:incoming>SequenceFlow_0r92eex</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_17jm6im</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:exclusiveGateway id="ExclusiveGateway_1h0p7ix" name="Is there a potential candidate?">
       <bpmn:incoming>SequenceFlow_1rdzp1f</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0mh6tpb</bpmn:outgoing>
@@ -113,6 +109,10 @@
     <bpmn:sequenceFlow id="SequenceFlow_1rdzp1f" sourceRef="Task_12nz208" targetRef="ExclusiveGateway_1h0p7ix" />
     <bpmn:sequenceFlow id="SequenceFlow_1fa9lcc" name="no" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_12nz208" />
     <bpmn:sequenceFlow id="SequenceFlow_15krsye" sourceRef="Task_0msqpu7" targetRef="EndEvent_0moosnl" />
+    <bpmn:callActivity id="Task_0gdifi0" name="Receive application" calledElement="RecieveApplication">
+      <bpmn:incoming>SequenceFlow_0r92eex</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_17jm6im</bpmn:outgoing>
+    </bpmn:callActivity>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0spw3nf">
@@ -135,9 +135,6 @@
         <di:waypoint x="295" y="260" />
         <di:waypoint x="480" y="260" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Task_0gdifi0_di" bpmnElement="Task_0gdifi0">
-        <dc:Bounds x="845" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1m0er4y_di" bpmnElement="Lane_1m0er4y" isHorizontal="true">
         <dc:Bounds x="187" y="80" width="3023" height="390" />
       </bpmndi:BPMNShape>
@@ -287,6 +284,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_0dpe6qt_di" bpmnElement="Task_0msqpu7">
         <dc:Bounds x="2470" y="320" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yg4wie_di" bpmnElement="Task_0gdifi0">
+        <dc:Bounds x="845" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
