@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_049gfhg" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_049gfhg" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_1vdj8ru">
-    <bpmn:participant id="Participant_0bfg3sa" processRef="Process_10uj1x6" />
+    <bpmn:participant id="DoOnboarding" processRef="SubProcess_DoOnboarding" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_10uj1x6" isExecutable="true">
+  <bpmn:process id="SubProcess_DoOnboarding" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="On boarding of new employee is needed">
       <bpmn:outgoing>SequenceFlow_1f8smyr</bpmn:outgoing>
     </bpmn:startEvent>
@@ -29,7 +29,7 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1vdj8ru">
-      <bpmndi:BPMNShape id="Participant_0bfg3sa_di" bpmnElement="Participant_0bfg3sa" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_0bfg3sa_di" bpmnElement="DoOnboarding" isHorizontal="true">
         <dc:Bounds x="160" y="82" width="949" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">

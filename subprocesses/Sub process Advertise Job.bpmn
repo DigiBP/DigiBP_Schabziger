@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1u75bas" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_0xj1gtz">
-    <bpmn:participant id="Participant_1ggjpg2" processRef="Process_14on2cs" />
+    <bpmn:participant id="AdvertiseJob" processRef="SubProcess_AdvertiseJob" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_14on2cs" isExecutable="true">
+  <bpmn:process id="SubProcess_AdvertiseJob" name="" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Job needs to be advertised">
       <bpmn:outgoing>SequenceFlow_180a53e</bpmn:outgoing>
     </bpmn:startEvent>
@@ -24,8 +24,8 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0xj1gtz">
-      <bpmndi:BPMNShape id="Participant_1ggjpg2_di" bpmnElement="Participant_1ggjpg2" isHorizontal="true">
-        <dc:Bounds x="129" y="57" width="960" height="250" />
+      <bpmndi:BPMNShape id="Participant_1ggjpg2_di" bpmnElement="AdvertiseJob" isHorizontal="true">
+        <dc:Bounds x="129" y="57" width="960" height="153" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="179" y="99" width="36" height="36" />

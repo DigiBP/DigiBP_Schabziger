@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_00qmx1q" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_18x3gcu">
-    <bpmn:participant id="Participant_1etkyrp" processRef="Process_1hdc0tb" />
+    <bpmn:participant id="EvaluateCanditate" processRef="SubProcess_EvaluateCanditate" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_1hdc0tb" isExecutable="true">
+  <bpmn:process id="SubProcess_EvaluateCanditate" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_0bv80d3</bpmn:outgoing>
     </bpmn:startEvent>
@@ -49,7 +49,7 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_18x3gcu">
-      <bpmndi:BPMNShape id="Participant_1etkyrp_di" bpmnElement="Participant_1etkyrp" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_1etkyrp_di" bpmnElement="EvaluateCanditate" isHorizontal="true">
         <dc:Bounds x="129" y="52" width="1081" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0gzg0xa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_0g1a369">
-    <bpmn:participant id="Participant_0hfccqe" processRef="RecieveApplication" />
+    <bpmn:participant id="Recieve_Application" processRef="SubProcess_RecieveApplication" />
   </bpmn:collaboration>
-  <bpmn:process id="RecieveApplication" isExecutable="true">
+  <bpmn:process id="SubProcess_RecieveApplication" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_0daqxo6</bpmn:outgoing>
     </bpmn:startEvent>
@@ -24,7 +24,7 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0g1a369">
-      <bpmndi:BPMNShape id="Participant_0hfccqe_di" bpmnElement="Participant_0hfccqe" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_0hfccqe_di" bpmnElement="Recieve_Application" isHorizontal="true">
         <dc:Bounds x="160" y="80" width="600" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">

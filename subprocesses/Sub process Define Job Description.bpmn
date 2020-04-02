@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_147bcz2" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_11fx9sv">
-    <bpmn:participant id="Participant_1aruzhd" processRef="SubProcess_DefineJobDescription" />
+    <bpmn:participant id="DefineJobDescription" processRef="SubProcess_DefineJobDescription" />
   </bpmn:collaboration>
   <bpmn:process id="SubProcess_DefineJobDescription" isExecutable="true">
     <bpmn:sequenceFlow id="Flow_1yekuri" sourceRef="StartEvent_Define_JD" targetRef="Activity_0c96cw3" />
@@ -46,7 +46,7 @@
       <bpmndi:BPMNShape id="Event_1r7posl_di" bpmnElement="Event_1r7posl">
         <dc:Bounds x="762" y="242" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Participant_1aruzhd_di" bpmnElement="Participant_1aruzhd" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_1aruzhd_di" bpmnElement="DefineJobDescription" isHorizontal="true">
         <dc:Bounds x="125" y="50" width="860" height="480" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_Define_JD">

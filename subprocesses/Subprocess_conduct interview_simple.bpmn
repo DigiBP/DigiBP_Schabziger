@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1tgmb0d" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_0533fi4">
-    <bpmn:participant id="Participant_1kaomk7" name="Recruitment  process" processRef="Process_16ovb3e" />
+    <bpmn:participant id="ConductInterview" name="Recruitment  process" processRef="SubProcess_ConductInterview" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_16ovb3e" isExecutable="true">
+  <bpmn:process id="SubProcess_ConductInterview" isExecutable="true">
     <bpmn:laneSet id="LaneSet_1yk0au4">
       <bpmn:lane id="Lane_1cjwduq" name="HR">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -50,8 +50,8 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0533fi4">
-      <bpmndi:BPMNShape id="Participant_1kaomk7_di" bpmnElement="Participant_1kaomk7" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="1320" height="220" />
+      <bpmndi:BPMNShape id="Participant_1kaomk7_di" bpmnElement="ConductInterview" isHorizontal="true">
+        <dc:Bounds x="152" y="80" width="1328" height="220" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="249" y="172" width="36" height="36" />
@@ -66,7 +66,7 @@
         <dc:Bounds x="500" y="150" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1cjwduq_di" bpmnElement="Lane_1cjwduq" isHorizontal="true">
-        <dc:Bounds x="190" y="80" width="1290" height="220" />
+        <dc:Bounds x="182" y="80" width="1298" height="220" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0k4rp7j_di" bpmnElement="Flow_0k4rp7j">
         <di:waypoint x="285" y="190" />

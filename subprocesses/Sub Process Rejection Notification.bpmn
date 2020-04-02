@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_11iig23" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_1r4pcqf">
-    <bpmn:participant id="Participant_1kkvzx9" processRef="Process_0shipak" />
+    <bpmn:participant id="RejectNotification" processRef="SubProcess_RejectNotification" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_0shipak" isExecutable="true">
+  <bpmn:process id="SubProcess_RejectNotification" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_0lz15ts</bpmn:outgoing>
     </bpmn:startEvent>
@@ -24,7 +24,7 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1r4pcqf">
-      <bpmndi:BPMNShape id="Participant_1kkvzx9_di" bpmnElement="Participant_1kkvzx9" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_1kkvzx9_di" bpmnElement="RejectNotification" isHorizontal="true">
         <dc:Bounds x="129" y="60" width="600" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
