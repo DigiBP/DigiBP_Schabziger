@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1xzv5fp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1xzv5fp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_0spw3nf">
     <bpmn:participant id="Participant_0q19xlr" processRef="Process_1pp24sg" />
-    <bpmn:participant id="RecruitementProcess" name="Recruitement process" processRef="MainProcess_RecruitementProcess" />
+    <bpmn:participant id="MainProcess" processRef="MainProcess_RecruitementProcess" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1pp24sg" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" />
@@ -55,21 +55,33 @@
       <bpmn:incoming>SequenceFlow_15krsye</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_0wwca6m" sourceRef="StartEvent_0c9y3ym" targetRef="Task_17dba2k" />
-    <bpmn:sequenceFlow id="SequenceFlow_0mh6tpb" name="yes" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_0v7vv8c" />
+    <bpmn:sequenceFlow id="SequenceFlow_0mh6tpb" name="yes" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_0v7vv8c">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_11rlv86" sourceRef="Task_17dba2k" targetRef="Task_1h6xkzp" />
     <bpmn:sequenceFlow id="SequenceFlow_0r92eex" sourceRef="Task_1h6xkzp" targetRef="Task_0gdifi0" />
     <bpmn:sequenceFlow id="SequenceFlow_1rhk776" sourceRef="Task_0v7vv8c" targetRef="Task_1xf6gbe" />
     <bpmn:sequenceFlow id="SequenceFlow_10q77jb" sourceRef="Task_1xf6gbe" targetRef="Task_1yhrgin" />
     <bpmn:sequenceFlow id="SequenceFlow_17she13" sourceRef="Task_1yhrgin" targetRef="ExclusiveGateway_1orzzjx" />
-    <bpmn:sequenceFlow id="SequenceFlow_1aq2a9e" name="Yes" sourceRef="ExclusiveGateway_1orzzjx" targetRef="Task_0u6xsev" />
-    <bpmn:sequenceFlow id="SequenceFlow_1abu3xn" sourceRef="ExclusiveGateway_1orzzjx" targetRef="Task_0msqpu7" />
+    <bpmn:sequenceFlow id="SequenceFlow_1aq2a9e" name="Yes" sourceRef="ExclusiveGateway_1orzzjx" targetRef="Task_0u6xsev">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1abu3xn" sourceRef="ExclusiveGateway_1orzzjx" targetRef="Task_0msqpu7">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1t40f6j" sourceRef="Task_0u6xsev" targetRef="ExclusiveGateway_1if7loe" />
-    <bpmn:sequenceFlow id="SequenceFlow_1ewbqi5" name="Yes" sourceRef="ExclusiveGateway_1if7loe" targetRef="Task_1prp1sa" />
-    <bpmn:sequenceFlow id="SequenceFlow_1q8snb5" name="No" sourceRef="ExclusiveGateway_1if7loe" targetRef="Task_0u6xsev" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ewbqi5" name="Yes" sourceRef="ExclusiveGateway_1if7loe" targetRef="Task_1prp1sa">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1q8snb5" name="No" sourceRef="ExclusiveGateway_1if7loe" targetRef="Task_0u6xsev">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1m4awr7" sourceRef="Task_1prp1sa" targetRef="EndEvent_0491vse" />
     <bpmn:sequenceFlow id="SequenceFlow_17jm6im" sourceRef="Task_0gdifi0" targetRef="Task_12nz208" />
     <bpmn:sequenceFlow id="SequenceFlow_1rdzp1f" sourceRef="Task_12nz208" targetRef="ExclusiveGateway_1h0p7ix" />
-    <bpmn:sequenceFlow id="SequenceFlow_1fa9lcc" name="no" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_12nz208" />
+    <bpmn:sequenceFlow id="SequenceFlow_1fa9lcc" name="no" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_12nz208">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_15krsye" sourceRef="Task_0msqpu7" targetRef="EndEvent_0moosnl" />
     <bpmn:callActivity id="Task_0gdifi0" name="Receive application" calledElement="SubProcess_RecieveApplication">
       <bpmn:incoming>SequenceFlow_0r92eex</bpmn:incoming>
@@ -122,7 +134,7 @@
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="619" y="3622" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Participant_1jlxsgw_di" bpmnElement="RecruitementProcess" isHorizontal="true">
+      <bpmndi:BPMNShape id="Participant_1jlxsgw_di" bpmnElement="MainProcess" isHorizontal="true">
         <dc:Bounds x="157" y="80" width="3053" height="870" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0c9y3ym_di" bpmnElement="StartEvent_0c9y3ym">

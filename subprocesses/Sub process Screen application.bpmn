@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_036noxt" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_036noxt" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_014zne4">
     <bpmn:participant id="ScreenApplication" processRef="SubProcess_ScreenApplication" />
   </bpmn:collaboration>
@@ -54,17 +54,33 @@
     <bpmn:endEvent id="EndEvent_1jnipz4" name="Candidate selcted for interview">
       <bpmn:incoming>SequenceFlow_0ds4n13</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0ds4n13" sourceRef="ExclusiveGateway_1e48gr7" targetRef="EndEvent_1jnipz4" />
-    <bpmn:sequenceFlow id="SequenceFlow_13unruw" sourceRef="ExclusiveGateway_1e48gr7" targetRef="EndEvent_0p34kpj" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ds4n13" sourceRef="ExclusiveGateway_1e48gr7" targetRef="EndEvent_1jnipz4">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_13unruw" sourceRef="ExclusiveGateway_1e48gr7" targetRef="EndEvent_0p34kpj">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1bogaas" sourceRef="Task_0kktc4u" targetRef="ExclusiveGateway_1e48gr7" />
-    <bpmn:sequenceFlow id="SequenceFlow_0646kyj" sourceRef="ExclusiveGateway_1gba0w6" targetRef="Task_0kktc4u" />
-    <bpmn:sequenceFlow id="SequenceFlow_0xbvfk8" sourceRef="ExclusiveGateway_1gba0w6" targetRef="EndEvent_195i9hs" />
+    <bpmn:sequenceFlow id="SequenceFlow_0646kyj" sourceRef="ExclusiveGateway_1gba0w6" targetRef="Task_0kktc4u">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_0xbvfk8" sourceRef="ExclusiveGateway_1gba0w6" targetRef="EndEvent_195i9hs">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1m2jvd7" sourceRef="Task_1biiv9v" targetRef="ExclusiveGateway_1gba0w6" />
-    <bpmn:sequenceFlow id="SequenceFlow_1x13emk" sourceRef="ExclusiveGateway_0z7u08f" targetRef="Task_1biiv9v" />
-    <bpmn:sequenceFlow id="SequenceFlow_00u0xuq" name="no" sourceRef="ExclusiveGateway_0z7u08f" targetRef="EndEvent_19seqbh" />
+    <bpmn:sequenceFlow id="SequenceFlow_1x13emk" sourceRef="ExclusiveGateway_0z7u08f" targetRef="Task_1biiv9v">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_00u0xuq" name="no" sourceRef="ExclusiveGateway_0z7u08f" targetRef="EndEvent_19seqbh">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_14fyd97" sourceRef="Task_1eix7n0" targetRef="ExclusiveGateway_0z7u08f" />
-    <bpmn:sequenceFlow id="SequenceFlow_0b4sg0i" name="yes" sourceRef="ExclusiveGateway_1rsul3a" targetRef="Task_1eix7n0" />
-    <bpmn:sequenceFlow id="SequenceFlow_1rfnyd5" name="no" sourceRef="ExclusiveGateway_1rsul3a" targetRef="EndEvent_0tqr4u7" />
+    <bpmn:sequenceFlow id="SequenceFlow_0b4sg0i" name="yes" sourceRef="ExclusiveGateway_1rsul3a" targetRef="Task_1eix7n0">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1rfnyd5" name="no" sourceRef="ExclusiveGateway_1rsul3a" targetRef="EndEvent_0tqr4u7">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1965zt0" sourceRef="Task_160gh8x" targetRef="ExclusiveGateway_1rsul3a" />
     <bpmn:sequenceFlow id="SequenceFlow_1adwkaw" sourceRef="StartEvent_1" targetRef="Task_160gh8x" />
     <bpmn:userTask id="Task_0kktc4u" name="Discuss appliation with Head of HR">
