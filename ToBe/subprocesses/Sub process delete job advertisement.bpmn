@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1l4av73" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <bpmn:collaboration id="Collaboration_0bbamae">
+    <bpmn:participant id="DeleteJobAdvertisement" processRef="SubProcess_DeleteJobAdvertisement" />
+  </bpmn:collaboration>
+  <bpmn:process id="SubProcess_DeleteJobAdvertisement" name="" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0v9cvel</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_03flwly" name="Delete Job annoucement on platform">
+      <bpmn:incoming>Flow_0v9cvel</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mwiux1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1f1sl8t" name="Report analytical data about Job anoucement">
+      <bpmn:incoming>Flow_1mwiux1</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nyhab7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1kgie0u">
+      <bpmn:incoming>Flow_0nyhab7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1mwiux1" sourceRef="Activity_03flwly" targetRef="Activity_1f1sl8t" />
+    <bpmn:sequenceFlow id="Flow_0v9cvel" sourceRef="StartEvent_1" targetRef="Activity_03flwly" />
+    <bpmn:sequenceFlow id="Flow_0nyhab7" sourceRef="Activity_1f1sl8t" targetRef="Event_1kgie0u" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0bbamae">
+      <bpmndi:BPMNShape id="Participant_1tzgwbq_di" bpmnElement="DeleteJobAdvertisement" isHorizontal="true">
+        <dc:Bounds x="129" y="52" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03flwly_di" bpmnElement="Activity_03flwly">
+        <dc:Bounds x="250" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1f1sl8t_di" bpmnElement="Activity_1f1sl8t">
+        <dc:Bounds x="420" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1kgie0u_di" bpmnElement="Event_1kgie0u">
+        <dc:Bounds x="572" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1mwiux1_di" bpmnElement="Flow_1mwiux1">
+        <di:waypoint x="350" y="177" />
+        <di:waypoint x="420" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0v9cvel_di" bpmnElement="Flow_0v9cvel">
+        <di:waypoint x="215" y="177" />
+        <di:waypoint x="250" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nyhab7_di" bpmnElement="Flow_0nyhab7">
+        <di:waypoint x="520" y="177" />
+        <di:waypoint x="572" y="177" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

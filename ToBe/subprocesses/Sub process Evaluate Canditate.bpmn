@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_00qmx1q" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <bpmn:collaboration id="Collaboration_18x3gcu">
+    <bpmn:participant id="EvaluateCanditate" processRef="SubProcess_EvaluateCanditate" />
+  </bpmn:collaboration>
+  <bpmn:process id="SubProcess_EvaluateCanditate" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0bv80d3</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_04nrznr">
+      <bpmn:incoming>Flow_0ejsnis</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0ejsnis" sourceRef="Activity_11i3b2q" targetRef="Event_04nrznr" />
+    <bpmn:sequenceFlow id="Flow_031k9s0" sourceRef="Activity_1n82bsf" targetRef="Activity_18389r5" />
+    <bpmn:sequenceFlow id="Flow_04yhc9b" sourceRef="Activity_18389r5" targetRef="Activity_0km7733" />
+    <bpmn:sequenceFlow id="Flow_1cs15q8" sourceRef="Activity_0km7733" targetRef="Activity_18n6sp4" />
+    <bpmn:sequenceFlow id="Flow_1lsqdnq" sourceRef="Activity_18n6sp4" targetRef="Activity_0hxic6f" />
+    <bpmn:sequenceFlow id="Flow_1kpwi11" sourceRef="Activity_0hxic6f" targetRef="Activity_160cdsl" />
+    <bpmn:sequenceFlow id="Flow_1k85iks" sourceRef="Activity_160cdsl" targetRef="Activity_11i3b2q" />
+    <bpmn:sequenceFlow id="Flow_0bv80d3" sourceRef="StartEvent_1" targetRef="Activity_1n82bsf" />
+    <bpmn:userTask id="Activity_1n82bsf" name="Ask for Educational Background">
+      <bpmn:incoming>Flow_0bv80d3</bpmn:incoming>
+      <bpmn:outgoing>Flow_031k9s0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_18389r5" name="Ask for work experience">
+      <bpmn:incoming>Flow_031k9s0</bpmn:incoming>
+      <bpmn:outgoing>Flow_04yhc9b</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0km7733" name="Ask for specific tecnical skills">
+      <bpmn:incoming>Flow_04yhc9b</bpmn:incoming>
+      <bpmn:outgoing>Flow_1cs15q8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_18n6sp4" name="Ask for ability to work in teams">
+      <bpmn:incoming>Flow_1cs15q8</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lsqdnq</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0hxic6f" name="Ask for Leadership quality">
+      <bpmn:incoming>Flow_1lsqdnq</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kpwi11</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_160cdsl" name="Ask about critical thinking and problem solving">
+      <bpmn:incoming>Flow_1kpwi11</bpmn:incoming>
+      <bpmn:outgoing>Flow_1k85iks</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_11i3b2q" name="Ask for Communication skills">
+      <bpmn:incoming>Flow_1k85iks</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ejsnis</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_18x3gcu">
+      <bpmndi:BPMNShape id="Participant_1etkyrp_di" bpmnElement="EvaluateCanditate" isHorizontal="true">
+        <dc:Bounds x="129" y="52" width="1081" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_04nrznr_di" bpmnElement="Event_04nrznr">
+        <dc:Bounds x="1132" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0ejsnis_di" bpmnElement="Flow_0ejsnis">
+        <di:waypoint x="1080" y="177" />
+        <di:waypoint x="1132" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_031k9s0_di" bpmnElement="Flow_031k9s0">
+        <di:waypoint x="340" y="177" />
+        <di:waypoint x="370" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04yhc9b_di" bpmnElement="Flow_04yhc9b">
+        <di:waypoint x="470" y="177" />
+        <di:waypoint x="490" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cs15q8_di" bpmnElement="Flow_1cs15q8">
+        <di:waypoint x="590" y="177" />
+        <di:waypoint x="610" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lsqdnq_di" bpmnElement="Flow_1lsqdnq">
+        <di:waypoint x="710" y="177" />
+        <di:waypoint x="730" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1kpwi11_di" bpmnElement="Flow_1kpwi11">
+        <di:waypoint x="830" y="177" />
+        <di:waypoint x="850" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k85iks_di" bpmnElement="Flow_1k85iks">
+        <di:waypoint x="950" y="177" />
+        <di:waypoint x="980" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bv80d3_di" bpmnElement="Flow_0bv80d3">
+        <di:waypoint x="215" y="177" />
+        <di:waypoint x="240" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1o1j28b_di" bpmnElement="Activity_1n82bsf">
+        <dc:Bounds x="240" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zwlcdd_di" bpmnElement="Activity_18389r5">
+        <dc:Bounds x="370" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pdvjcr_di" bpmnElement="Activity_0km7733">
+        <dc:Bounds x="490" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kou2hi_di" bpmnElement="Activity_18n6sp4">
+        <dc:Bounds x="610" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0i1567k_di" bpmnElement="Activity_0hxic6f">
+        <dc:Bounds x="730" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1k429f7_di" bpmnElement="Activity_160cdsl">
+        <dc:Bounds x="850" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02tzih9_di" bpmnElement="Activity_11i3b2q">
+        <dc:Bounds x="980" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
