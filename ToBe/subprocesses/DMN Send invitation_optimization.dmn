@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1cbf8b4" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <decision id="Decision_0q5rqmc" name="Decision 1">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1lkckue">
+        <inputExpression id="LiteralExpression_0a0kh1f" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string" />
+      <rule id="DecisionRule_1ppayvl">
+        <inputEntry id="UnaryTests_0wvx9yf">
+          <text>Date</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xzcqqe">
+          <text>Time</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ywnn0n">
+          <text>yes</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gkyewb">
+        <inputEntry id="UnaryTests_0svocno">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wkytcl">
+          <text>Time</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mdzf6o">
+          <text>no</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y6tey7">
+        <inputEntry id="UnaryTests_1g7f9c7">
+          <text>Date</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pplsnr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ovd4y8">
+          <text>no</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1twj1bs">
+        <inputEntry id="UnaryTests_0ugp45c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u299q0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bmvumu">
+          <text>no</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
