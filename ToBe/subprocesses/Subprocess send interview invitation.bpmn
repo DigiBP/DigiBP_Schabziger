@@ -5,7 +5,7 @@
     <bpmn:participant id="Participant_0chu551" name="Candidate / applicant" />
     <bpmn:messageFlow id="MessageFlow_1f01cx5" name="send reminder" sourceRef="Activity_0s6rybx" targetRef="Participant_0chu551" />
     <bpmn:messageFlow id="MessageFlow_04si8qn" name="send invitation" sourceRef="Activity_1eovbsc" targetRef="Participant_0chu551" />
-    <bpmn:messageFlow id="MessageFlow_0x5v9ps" name="selecht appointment date and time" sourceRef="Participant_0chu551" targetRef="Activity_03qz6tw" />
+    <bpmn:messageFlow id="MessageFlow_0x5v9ps" name="select appointment date and time" sourceRef="Participant_0chu551" targetRef="Activity_03qz6tw" />
   </bpmn:collaboration>
   <bpmn:process id="SubProcess_SendInterviewInvitation" name="Subprocess send interview invitation" isExecutable="true">
     <bpmn:laneSet id="LaneSet_00q79h0" />
@@ -20,14 +20,6 @@
       <bpmn:outgoing>Flow_1umhza8</bpmn:outgoing>
       <bpmn:outgoing>Flow_02h8ajy</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Activity_1wsl7ry" name="create email for interview invitation">
-      <bpmn:incoming>Flow_014tvbd</bpmn:incoming>
-      <bpmn:outgoing>Flow_19l14o4</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:manualTask id="Activity_0s6rybx" name="write reminder">
-      <bpmn:incoming>Flow_02h8ajy</bpmn:incoming>
-      <bpmn:outgoing>Flow_11njtrz</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:businessRuleTask id="Activity_03qz6tw" name="Check if Interview date is selected" camunda:resultVariable="scoringResult" camunda:decisionRef="Decision_0q5rqmc" camunda:mapDecisionResult="singleResult">
       <bpmn:extensionElements>
         <camunda:inputOutput>
@@ -64,10 +56,27 @@
       <bpmn:incoming>Flow_1umhza8</bpmn:incoming>
       <bpmn:outgoing>Flow_09wa4dd</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:task id="Activity_1eovbsc" name="send  inviatation to the candidate">
+    <bpmn:serviceTask id="Activity_1wsl7ry" name="create email for interview invitation">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url">https://hook.integromat.com/ik39xti78ryefbxxvjokmtemezwaxpvg</camunda:inputParameter>
+            <camunda:outputParameter name="create_email">https://hook.integromat.com/ik39xti78ryefbxxvjokmtemezwaxpvg</camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_014tvbd</bpmn:incoming>
+      <bpmn:outgoing>Flow_19l14o4</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_1eovbsc" name="send  inviatation to the candidate">
       <bpmn:incoming>Flow_19l14o4</bpmn:incoming>
       <bpmn:outgoing>Flow_1qj56vv</bpmn:outgoing>
-    </bpmn:task>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_0s6rybx" name="write reminder">
+      <bpmn:incoming>Flow_02h8ajy</bpmn:incoming>
+      <bpmn:outgoing>Flow_11njtrz</bpmn:outgoing>
+    </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_057eby6">
       <bpmn:text>Send Email &amp; Doodle for Appointment</bpmn:text>
     </bpmn:textAnnotation>
@@ -132,10 +141,11 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1f01cx5_di" bpmnElement="MessageFlow_1f01cx5">
-        <di:waypoint x="860" y="620" />
-        <di:waypoint x="860" y="280" />
+        <di:waypoint x="810" y="660" />
+        <di:waypoint x="780" y="660" />
+        <di:waypoint x="780" y="280" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="869" y="306" width="72" height="14" />
+          <dc:Bounds x="784" y="314" width="72" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_04si8qn_di" bpmnElement="MessageFlow_04si8qn">
@@ -150,18 +160,12 @@
         <di:waypoint x="965" y="526" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0x5v9ps_di" bpmnElement="MessageFlow_0x5v9ps">
-        <di:waypoint x="860" y="280" />
-        <di:waypoint x="860" y="486" />
+        <di:waypoint x="880" y="280" />
+        <di:waypoint x="880" y="486" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="777" y="426" width="86" height="40" />
+          <dc:Bounds x="887" y="295" width="86" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Activity_0tozyun_di" bpmnElement="Activity_1wsl7ry">
-        <dc:Bounds x="390" y="486" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_12d7vr6_di" bpmnElement="Activity_0s6rybx">
-        <dc:Bounds x="810" y="620" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_11njtrz_di" bpmnElement="Flow_11njtrz">
         <di:waypoint x="860" y="620" />
         <di:waypoint x="860" y="566" />
@@ -172,8 +176,14 @@
       <bpmndi:BPMNShape id="Activity_0c9coor_di" bpmnElement="Activity_0u6qm25">
         <dc:Bounds x="1100" y="486" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0hdgqkf_di" bpmnElement="Activity_1eovbsc">
+      <bpmndi:BPMNShape id="Activity_1ctlrez_di" bpmnElement="Activity_1wsl7ry">
+        <dc:Bounds x="390" y="486" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02xiymw_di" bpmnElement="Activity_1eovbsc">
         <dc:Bounds x="610" y="486" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15l4444_di" bpmnElement="Activity_0s6rybx">
+        <dc:Bounds x="810" y="620" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
