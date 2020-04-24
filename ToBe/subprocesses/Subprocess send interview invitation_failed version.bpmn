@@ -2,7 +2,7 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1b5i6qv" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
   <bpmn:collaboration id="Collaboration_059locm">
     <bpmn:participant id="SendInvitation" processRef="SubProcess_SendInterviewInvitation" />
-    <bpmn:participant id="Participant_0chu551" name="Candidate / applicant" />
+    <bpmn:participant id="Participant_0chu551" name="Candidate / Applicant" />
     <bpmn:messageFlow id="MessageFlow_1f01cx5" name="send reminder" sourceRef="Activity_0s6rybx" targetRef="Participant_0chu551" />
     <bpmn:messageFlow id="MessageFlow_04si8qn" name="send invitation" sourceRef="Activity_1eovbsc" targetRef="Participant_0chu551" />
     <bpmn:messageFlow id="MessageFlow_0x5v9ps" name="select appointment date and time" sourceRef="Participant_0chu551" targetRef="Activity_03qz6tw" />
@@ -60,7 +60,8 @@
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
-            <camunda:inputParameter name="url">https://hook.integromat.com/mla867pxg9qehq49fgw0aygvi5n79bmv</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/osdrfzyjjxbl7cycp5m286n4r61rd462
+</camunda:inputParameter>
             <camunda:outputParameter name="create_email">https://hook.integromat.com/mla867pxg9qehq49fgw0aygvi5n79bmv</camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
@@ -69,13 +70,13 @@
       <bpmn:incoming>Flow_014tvbd</bpmn:incoming>
       <bpmn:outgoing>Flow_19l14o4</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Activity_1eovbsc" name="send  inviatation to the candidate">
-      <bpmn:incoming>Flow_19l14o4</bpmn:incoming>
-      <bpmn:outgoing>Flow_1qj56vv</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:userTask id="Activity_0s6rybx" name="write reminder">
       <bpmn:incoming>Flow_02h8ajy</bpmn:incoming>
       <bpmn:outgoing>Flow_11njtrz</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_1eovbsc" name="send  inviatation to the candidate">
+      <bpmn:incoming>Flow_19l14o4</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qj56vv</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_057eby6">
       <bpmn:text>Send Email &amp; Doodle for Appointment</bpmn:text>
@@ -179,11 +180,11 @@
       <bpmndi:BPMNShape id="Activity_1ctlrez_di" bpmnElement="Activity_1wsl7ry">
         <dc:Bounds x="390" y="486" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_02xiymw_di" bpmnElement="Activity_1eovbsc">
-        <dc:Bounds x="610" y="486" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_15l4444_di" bpmnElement="Activity_0s6rybx">
         <dc:Bounds x="810" y="620" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1lkwb4t_di" bpmnElement="Activity_1eovbsc">
+        <dc:Bounds x="610" y="486" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

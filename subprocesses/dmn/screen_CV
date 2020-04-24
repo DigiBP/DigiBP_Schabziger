@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1u93mxs" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
+  <decision id="Decision_08suk15" name="Evaluate CV">
+    <extensionElements>
+      <biodi:bounds x="275" y="178" width="180" height="80" />
+      <biodi:edge source="KnowledgeSource_01g9jdd">
+        <biodi:waypoints x="307" y="144" />
+        <biodi:waypoints x="351" y="178" />
+      </biodi:edge>
+      <biodi:edge source="BusinessKnowledgeModel_07ldrok">
+        <biodi:waypoints x="247" y="316" />
+        <biodi:waypoints x="305" y="258" />
+      </biodi:edge>
+    </extensionElements>
+    <knowledgeRequirement>
+      <requiredKnowledge href="#BusinessKnowledgeModel_07ldrok" />
+    </knowledgeRequirement>
+    <authorityRequirement>
+      <requiredAuthority href="#KnowledgeSource_01g9jdd" />
+    </authorityRequirement>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Languages">
+        <inputExpression id="inputExpression_1" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10mohjj" label="IT skills">
+        <inputExpression id="LiteralExpression_0hv6kkt" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_09u8iyx" label="Similar work experience">
+        <inputExpression id="LiteralExpression_08ar7nb" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Expectations are met" typeRef="boolean" />
+      <rule id="DecisionRule_0cykf28">
+        <inputEntry id="UnaryTests_12j32pk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dqwxuk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0voo2y1">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ggb47j">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m565sj">
+        <inputEntry id="UnaryTests_0dllzju">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tivdin">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qy3meb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lvsb0d">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gokq0r">
+        <inputEntry id="UnaryTests_1c4ft82">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tks6st">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xx5srv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08by5j6">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jru3cj">
+        <inputEntry id="UnaryTests_09jmkeu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dncyyz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k0szm8">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x2pxen">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_01g9jdd" name="Application">
+    <extensionElements>
+      <biodi:bounds x="216" y="81" width="100" height="63" />
+    </extensionElements>
+  </knowledgeSource>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_07ldrok" name="Requirements for selection/ Job expectations">
+    <extensionElements>
+      <biodi:bounds x="156" y="316" width="135" height="46" />
+    </extensionElements>
+  </businessKnowledgeModel>
+</definitions>

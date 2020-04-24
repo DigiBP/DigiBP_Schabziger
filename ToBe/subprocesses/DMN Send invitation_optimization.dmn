@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1cbf8b4" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.0">
+  <decision id="Decision_0q5rqmc" name="Decision 1">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Date">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Date</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0nhmls3">
+          <text>"01.06.2020","08.06.2020"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1lkckue" label="Time">
+        <inputExpression id="LiteralExpression_0a0kh1f" typeRef="string">
+          <text>Time</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0obosjx">
+          <text>"10.00 am","11.00 am"</text>
+        </inputValues>
+      </input>
+      <output id="output_1" label="Yes No" name="Yes No" typeRef="string">
+        <outputValues id="UnaryTests_0mdcv9x">
+          <text>"yes","no"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1ppayvl">
+        <description>continue with the process</description>
+        <inputEntry id="UnaryTests_0wvx9yf">
+          <text>"01.06.2020"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xzcqqe">
+          <text>"10.00 pm" </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ywnn0n">
+          <text>"yes"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gkyewb">
+        <inputEntry id="UnaryTests_0svocno">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wkytcl">
+          <text>"10.00 pm" </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mdzf6o">
+          <text>"no"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y6tey7">
+        <inputEntry id="UnaryTests_1g7f9c7">
+          <text>"01.06.2020"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pplsnr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ovd4y8">
+          <text>"no"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1twj1bs">
+        <inputEntry id="UnaryTests_0ugp45c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u299q0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bmvumu">
+          <text>"no"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r6mo45">
+        <inputEntry id="UnaryTests_1i0665q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x9gfhx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_048yssy">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
