@@ -288,11 +288,11 @@
         <dc:Bounds x="2701" y="225" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0qsj96g_di" bpmnElement="TextAnnotation_0qsj96g">
-        <dc:Bounds x="1630" y="140" width="100" height="53" />
+        <dc:Bounds x="1560" y="130" width="100" height="53" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1nwxl9a_di" bpmnElement="Association_1nwxl9a">
-        <di:waypoint x="1614" y="226" />
-        <di:waypoint x="1651" y="193" />
+        <di:waypoint x="1585" y="225" />
+        <di:waypoint x="1601" y="183" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0iyf1ie_di" bpmnElement="Task_0v7vv8c">
         <dc:Bounds x="1521" y="225" width="100" height="80" />
