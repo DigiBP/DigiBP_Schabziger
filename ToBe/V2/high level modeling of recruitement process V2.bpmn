@@ -24,7 +24,35 @@
         <bpmn:flowNodeRef>Event_1i1mt27</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:decisionRef="Decision_0e6eaal">
+    <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:resultVariable="ScreenResult" camunda:decisionRef="Decision_0e6eaal" camunda:mapDecisionResult="singleResult">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="MSOffice_Level">
+            <camunda:script scriptFormat="JavaScript">Number{MsOffice_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="TeamWork_Level">
+            <camunda:script scriptFormat="JavaScript ">Number{TeamWork_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="Analytical_Level">
+            <camunda:script scriptFormat="JavaScript">Number{Analytical_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="German_Level">
+            <camunda:script scriptFormat="JavaScript ">Text{German_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="French_Level">
+            <camunda:script scriptFormat="JavaScript ">Text{French_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="Italian_Level">
+            <camunda:script scriptFormat="JavaScript ">Text{Italian_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="English_Level">
+            <camunda:script scriptFormat="JavaScript ">Text{English_Level}</camunda:script>
+          </camunda:inputParameter>
+          <camunda:outputParameter name="ScreenResult">
+            <camunda:script scriptFormat="JavaScript">boolean{ScreenResult}</camunda:script>
+          </camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_0h38eos</bpmn:incoming>
       <bpmn:outgoing>Flow_1kfsilp</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -90,7 +118,7 @@
     <bpmn:sequenceFlow id="Flow_1ausdgv" sourceRef="Task_0v7vv8c" targetRef="Activity_0clpxy2" />
     <bpmn:sequenceFlow id="SequenceFlow_15krsye" sourceRef="Task_0msqpu7" targetRef="EndEvent_0moosnl" />
     <bpmn:sequenceFlow id="SequenceFlow_1fa9lcc" name="no" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_0msqpu7">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">$ScreenResult</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ScreenResult==false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1m4awr7" sourceRef="Task_1prp1sa" targetRef="EndEvent_0491vse" />
     <bpmn:sequenceFlow id="SequenceFlow_1q8snb5" name="No" sourceRef="ExclusiveGateway_1if7loe" targetRef="Task_0u6xsev">
@@ -108,7 +136,7 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_17she13" sourceRef="Task_1yhrgin" targetRef="ExclusiveGateway_1orzzjx" />
     <bpmn:sequenceFlow id="SequenceFlow_0mh6tpb" name="yes" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_0v7vv8c">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">$ScreenResult</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ScreenResult==true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmn:message id="Message_0bm5bun" name="Message_1rdqms5" />

@@ -220,7 +220,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1l5g8yv">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ymeu33">
@@ -246,7 +246,7 @@
           <text>"A1","A2","B1"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nx50ud">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
