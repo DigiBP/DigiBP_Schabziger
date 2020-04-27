@@ -15,8 +15,28 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_10tkobk" label="AT_Level">
+      <input id="InputClause_10tkobk" label="Analytical_Level">
         <inputExpression id="LiteralExpression_18sbvj3" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1cx7st5" label="German_Level">
+        <inputExpression id="LiteralExpression_1lb7m6m" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1geyott" label="French_Level">
+        <inputExpression id="LiteralExpression_04nhzyj" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_086sufq" label="Italian_Level">
+        <inputExpression id="LiteralExpression_1drh346" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1uvdk97" label="English_Level">
+        <inputExpression id="LiteralExpression_0tq7gpy" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
@@ -31,6 +51,18 @@
         <inputEntry id="UnaryTests_0je7xps">
           <text>&gt;= 3</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0nlwem1">
+          <text>"C1","C2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zdfk4m">
+          <text>"B2","C1","C2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ma2cpg">
+          <text>"B2","C1","C2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ohf1ms">
+          <text>"B2","C1","C2"</text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_16h3z2l">
           <text>true</text>
         </outputEntry>
@@ -40,13 +72,181 @@
           <text>&lt; 3</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ha190w">
-          <text>&lt; 3</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0l7pf19">
-          <text>&lt; 3</text>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pep67u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10041o5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ve3an">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y7w9gk">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09k6se0">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1psx07h">
+        <inputEntry id="UnaryTests_1ex1xn7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bqzdnq">
+          <text>&lt;3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oetfsj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19jm8gb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wvzy1i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jwfeko">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rl2ldf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1udnekc">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0memh8b">
+        <inputEntry id="UnaryTests_078aah8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kharul">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzi2ou">
+          <text>&lt;3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xd3p0m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gisybw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i702vt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ifb7f8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cu4zza">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q5p8ej">
+        <inputEntry id="UnaryTests_1yjgcwy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xtdb6p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sjojna">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y6w3fq">
+          <text>"A1","A2","B1","B2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u2cpb1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e9vzi0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iwbqpp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1timllg">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yb188b">
+        <inputEntry id="UnaryTests_137k865">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lnj1t4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sr5ch4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ptf6hs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ce1dye">
+          <text>"A1","A2","B1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10iaxbc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zydxc7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07kksh1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wpiyju">
+        <inputEntry id="UnaryTests_13znpmk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ta2vp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01wxk6q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x3sptn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01cc40o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0geyoja">
+          <text>"A1","A2","B1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zxjpuv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l5g8yv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ymeu33">
+        <inputEntry id="UnaryTests_1gg4msc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ppklp1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g33708">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10o1z76">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ps5be">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0evtuj0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0drtjlb">
+          <text>"A1","A2","B1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nx50ud">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
