@@ -5,37 +5,37 @@
       <biodi:bounds x="150" y="150" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable_1" hitPolicy="RULE ORDER">
-      <input id="input_1" label="MSOffice_Level" camunda:inputVariable="$MSOffice_Level">
+      <input id="input_1" label="MSOffice_Level" camunda:inputVariable="MSOffice_Level">
         <inputExpression id="inputExpression_1" typeRef="integer" expressionLanguage="javascript">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1mw12o8" label="TeamWork_Level">
+      <input id="InputClause_1mw12o8" label="TeamWork_Level" camunda:inputVariable="TeamWork_Level">
         <inputExpression id="LiteralExpression_1a0nx62" typeRef="integer">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_10tkobk" label="Analytical_Level">
+      <input id="InputClause_10tkobk" label="Analytical_Level" camunda:inputVariable="Analytical_Level">
         <inputExpression id="LiteralExpression_18sbvj3" typeRef="integer">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1cx7st5" label="German_Level">
+      <input id="InputClause_1cx7st5" label="German_Level" camunda:inputVariable="German_Level">
         <inputExpression id="LiteralExpression_1lb7m6m" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1geyott" label="French_Level">
+      <input id="InputClause_1geyott" label="French_Level" camunda:inputVariable="French_Level">
         <inputExpression id="LiteralExpression_04nhzyj" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_086sufq" label="Italian_Level">
+      <input id="InputClause_086sufq" label="Italian_Level" camunda:inputVariable="Italian_Level">
         <inputExpression id="LiteralExpression_1drh346" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1uvdk97" label="English_Level">
+      <input id="InputClause_1uvdk97" label="English_Level" camunda:inputVariable="English_Level">
         <inputExpression id="LiteralExpression_0tq7gpy" typeRef="string">
           <text></text>
         </inputExpression>
