@@ -20,8 +20,9 @@
         <bpmn:flowNodeRef>ExclusiveGateway_1if7loe</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1prp1sa</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0491vse</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>StartEvent_1y9o38t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1i1mt27</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_1y9o38t</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1ok6kno</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:resultVariable="ScreenResult" camunda:decisionRef="Decision_0e6eaal" camunda:mapDecisionResult="singleResult">
@@ -51,7 +52,7 @@
           <camunda:outputParameter name="ScreenResult" />
         </camunda:inputOutput>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0h38eos</bpmn:incoming>
+      <bpmn:incoming>Flow_1f21s56</bpmn:incoming>
       <bpmn:outgoing>Flow_1kfsilp</bpmn:outgoing>
     </bpmn:businessRuleTask>
     <bpmn:exclusiveGateway id="ExclusiveGateway_1h0p7ix" name="Potential candidate?">
@@ -101,27 +102,11 @@
     <bpmn:endEvent id="EndEvent_0491vse" name="An employee is apointed to the job">
       <bpmn:incoming>SequenceFlow_1m4awr7</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:startEvent id="StartEvent_1y9o38t">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="MSOffice_Level" type="enum" />
-          <camunda:formField id="TeamWork_Level" type="enum" />
-          <camunda:formField id="Analytical_Level" type="enum" />
-          <camunda:formField id="German_Level" type="enum" />
-          <camunda:formField id="French_Level" type="enum" />
-          <camunda:formField id="Italian_Level" type="enum" />
-          <camunda:formField id="English_Level" type="enum" />
-          <camunda:formField id="ScreenResult" type="boolean" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:outgoing>Flow_0h38eos</bpmn:outgoing>
-    </bpmn:startEvent>
     <bpmn:intermediateCatchEvent id="Event_1i1mt27">
       <bpmn:incoming>Flow_1rkwntx</bpmn:incoming>
       <bpmn:outgoing>Flow_0cq941w</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1hdq3oo" messageRef="Message_0bm5bun" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:sequenceFlow id="Flow_0h38eos" sourceRef="StartEvent_1y9o38t" targetRef="Activity_0h19qhp" />
     <bpmn:sequenceFlow id="Flow_1kfsilp" sourceRef="Activity_0h19qhp" targetRef="ExclusiveGateway_1h0p7ix" />
     <bpmn:sequenceFlow id="Flow_0cq941w" sourceRef="Event_1i1mt27" targetRef="Task_1yhrgin" />
     <bpmn:sequenceFlow id="Flow_1rkwntx" sourceRef="Activity_0clpxy2" targetRef="Event_1i1mt27" />
@@ -148,6 +133,31 @@
     <bpmn:sequenceFlow id="SequenceFlow_0mh6tpb" name="yes" sourceRef="ExclusiveGateway_1h0p7ix" targetRef="Task_0v7vv8c">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ScreenResult==true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0tc2qgv" sourceRef="StartEvent_1y9o38t" targetRef="Activity_1ok6kno" />
+    <bpmn:sequenceFlow id="Flow_1f21s56" sourceRef="Activity_1ok6kno" targetRef="Activity_0h19qhp" />
+    <bpmn:startEvent id="StartEvent_1y9o38t">
+      <bpmn:extensionElements>
+        <camunda:formData>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0tc2qgv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_1ok6kno">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="MSOffice_Level" type="enum" />
+          <camunda:formField id="TeamWork_Level" type="enum" />
+          <camunda:formField id="Analytical_Level" type="enum" />
+          <camunda:formField id="German_Level" type="enum" />
+          <camunda:formField id="French_Level" type="enum" />
+          <camunda:formField id="Italian_Level" type="enum" />
+          <camunda:formField id="English_Level" type="enum" />
+          <camunda:formField id="ScreenResult" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0tc2qgv</bpmn:incoming>
+      <bpmn:outgoing>Flow_1f21s56</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmn:message id="Message_0bm5bun" name="Message_1rdqms5" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -294,12 +304,19 @@
         <di:waypoint x="1125" y="265" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Event_1y9o38t_di" bpmnElement="StartEvent_1y9o38t">
-        <dc:Bounds x="842" y="247" width="36" height="36" />
+        <dc:Bounds x="772" y="242" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_0h38eos_di" bpmnElement="Flow_0h38eos">
-        <di:waypoint x="878" y="265" />
+      <bpmndi:BPMNEdge id="Flow_0tc2qgv_di" bpmnElement="Flow_0tc2qgv">
+        <di:waypoint x="808" y="260" />
+        <di:waypoint x="850" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1f21s56_di" bpmnElement="Flow_1f21s56">
+        <di:waypoint x="950" y="265" />
         <di:waypoint x="970" y="265" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1ug8t1i_di" bpmnElement="Activity_1ok6kno">
+        <dc:Bounds x="850" y="225" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
