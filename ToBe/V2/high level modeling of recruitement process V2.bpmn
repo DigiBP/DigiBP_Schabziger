@@ -20,11 +20,11 @@
         <bpmn:flowNodeRef>ExclusiveGateway_1if7loe</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1prp1sa</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0491vse</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1y9o38t</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_1y9o38t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1i1mt27</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:decisionRef="ScreenApplicationDecision">
+    <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:decisionRef="Decision_0e6eaal">
       <bpmn:incoming>Flow_0h38eos</bpmn:incoming>
       <bpmn:outgoing>Flow_1kfsilp</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -75,7 +75,7 @@
     <bpmn:endEvent id="EndEvent_0491vse" name="An employee is apointed to the job">
       <bpmn:incoming>SequenceFlow_1m4awr7</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:startEvent id="Event_1y9o38t">
+    <bpmn:startEvent id="StartEvent_1y9o38t">
       <bpmn:outgoing>Flow_0h38eos</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:intermediateCatchEvent id="Event_1i1mt27">
@@ -83,7 +83,7 @@
       <bpmn:outgoing>Flow_0cq941w</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1hdq3oo" messageRef="Message_0bm5bun" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:sequenceFlow id="Flow_0h38eos" sourceRef="Event_1y9o38t" targetRef="Activity_0h19qhp" />
+    <bpmn:sequenceFlow id="Flow_0h38eos" sourceRef="StartEvent_1y9o38t" targetRef="Activity_0h19qhp" />
     <bpmn:sequenceFlow id="Flow_1kfsilp" sourceRef="Activity_0h19qhp" targetRef="ExclusiveGateway_1h0p7ix" />
     <bpmn:sequenceFlow id="Flow_0cq941w" sourceRef="Event_1i1mt27" targetRef="Task_1yhrgin" />
     <bpmn:sequenceFlow id="Flow_1rkwntx" sourceRef="Activity_0clpxy2" targetRef="Event_1i1mt27" />
@@ -255,7 +255,7 @@
         <di:waypoint x="1070" y="265" />
         <di:waypoint x="1125" y="265" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Event_1y9o38t_di" bpmnElement="Event_1y9o38t">
+      <bpmndi:BPMNShape id="Event_1y9o38t_di" bpmnElement="StartEvent_1y9o38t">
         <dc:Bounds x="842" y="247" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0h38eos_di" bpmnElement="Flow_0h38eos">
