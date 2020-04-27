@@ -28,7 +28,7 @@
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="MSOffice_Level">
-            <camunda:script scriptFormat="JavaScript">Number{MsOffice_Level}</camunda:script>
+            <camunda:script scriptFormat="JavaScript">Number(MSOffice_Level)</camunda:script>
           </camunda:inputParameter>
           <camunda:inputParameter name="TeamWork_Level">
             <camunda:script scriptFormat="JavaScript ">Number{TeamWork_Level}</camunda:script>
@@ -48,9 +48,7 @@
           <camunda:inputParameter name="English_Level">
             <camunda:script scriptFormat="JavaScript ">Text{English_Level}</camunda:script>
           </camunda:inputParameter>
-          <camunda:outputParameter name="ScreenResult">
-            <camunda:script scriptFormat="JavaScript">boolean{ScreenResult}</camunda:script>
-          </camunda:outputParameter>
+          <camunda:outputParameter name="ScreenResult" />
         </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0h38eos</bpmn:incoming>
@@ -104,6 +102,18 @@
       <bpmn:incoming>SequenceFlow_1m4awr7</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:startEvent id="StartEvent_1y9o38t">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="MSOffice_Level" type="enum" />
+          <camunda:formField id="TeamWork_Level" type="enum" />
+          <camunda:formField id="Analytical_Level" type="enum" />
+          <camunda:formField id="German_Level" type="enum" />
+          <camunda:formField id="French_Level" type="enum" />
+          <camunda:formField id="Italian_Level" type="enum" />
+          <camunda:formField id="English_Level" type="enum" />
+          <camunda:formField id="ScreenResult" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
       <bpmn:outgoing>Flow_0h38eos</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:intermediateCatchEvent id="Event_1i1mt27">
