@@ -20,7 +20,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <output id="output_1" label="ScreenResult" name="ScreenResult" typeRef="boolean" />
+      <output id="output_1" label="ScreenResult" name="ScreenResult" typeRef="integer" />
       <rule id="DecisionRule_0yrcoyc">
         <inputEntry id="UnaryTests_1nz6zgu">
           <text>&gt;= 3</text>
@@ -32,7 +32,7 @@
           <text>&gt;= 3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16h3z2l">
-          <text>true</text>
+          <text>1</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ecxahb">
@@ -46,7 +46,7 @@
           <text>&gt;=3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09k6se0">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1psx07h">
@@ -60,7 +60,7 @@
           <text>&gt;=3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1udnekc">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0memh8b">
@@ -74,7 +74,7 @@
           <text>&lt;3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0cu4zza">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0mzwdlw">
@@ -88,7 +88,7 @@
           <text>&lt; 3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1d2kr5q">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1s5r8tu">
@@ -102,7 +102,7 @@
           <text>&gt;=3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11zr6vm">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0186yt6">
@@ -116,7 +116,7 @@
           <text>&lt; 3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sgpeq6">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ie0q94">
@@ -130,7 +130,7 @@
           <text>&lt; 3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1t7mbg0">
-          <text>false</text>
+          <text>0</text>
         </outputEntry>
       </rule>
     </decisionTable>
