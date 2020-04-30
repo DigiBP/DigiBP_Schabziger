@@ -25,6 +25,8 @@
         <bpmn:flowNodeRef>Activity_01pswj7</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0v7vv8c</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1hntpvr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0xyyh0h</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>rejection</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:businessRuleTask id="Activity_0h19qhp" name="Screen Application" camunda:resultVariable="ScreenResult" camunda:decisionRef="Decision_0e6eaal" camunda:mapDecisionResult="singleEntry">
@@ -132,6 +134,7 @@
           <camunda:formField id="MSOffice_Level" label="MSOffice_Level" type="string" />
           <camunda:formField id="TeamWork_Level" label="TeamWork_Level" type="string" />
           <camunda:formField id="Analytical_Level" label="Analytical_Level" type="string" />
+          <camunda:formField id="RowNumber" label="RowNumber" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0mklwic</bpmn:incoming>
@@ -145,13 +148,52 @@
       <bpmn:incoming>SequenceFlow_0mh6tpb</bpmn:incoming>
       <bpmn:outgoing>Flow_1jyyy3h</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_005otac" sourceRef="Activity_1hntpvr" targetRef="Task_0msqpu7" />
+    <bpmn:sequenceFlow id="Flow_005otac" sourceRef="rejection" targetRef="Task_0msqpu7" />
     <bpmn:callActivity id="Task_0v7vv8c" name="send invitation for interview" calledElement="SubProcess_SendInterviewInvitation">
       <bpmn:incoming>Flow_1jyyy3h</bpmn:incoming>
       <bpmn:outgoing>Flow_1ausdgv</bpmn:outgoing>
     </bpmn:callActivity>
     <bpmn:userTask id="Activity_1hntpvr" name="NoCase">
       <bpmn:incoming>Flow_0be92cd</bpmn:incoming>
+      <bpmn:outgoing>Flow_11o0yel</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_11o0yel" sourceRef="Activity_1hntpvr" targetRef="Activity_0xyyh0h" />
+    <bpmn:serviceTask id="Activity_0xyyh0h" name="Send rejection">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/jicv16mpfrwi3ddnoewk7c7lxqd121tl</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out=JSON.stringify({
+ "variables": {
+ 	"row" : {
+ 		"value" : RowNumber,
+ 		"type" : "string"
+ 	}
+ 	}
+ 	})</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="RowNumber">
+            <camunda:script scriptFormat="JavaScript">Number(RowNumber)</camunda:script>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_11o0yel</bpmn:incoming>
+      <bpmn:outgoing>Flow_0052yhn</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0052yhn" sourceRef="Activity_0xyyh0h" targetRef="rejection" />
+    <bpmn:userTask id="rejection" name="rejection">
+      <bpmn:incoming>Flow_0052yhn</bpmn:incoming>
       <bpmn:outgoing>Flow_005otac</bpmn:outgoing>
     </bpmn:userTask>
   </bpmn:process>
@@ -324,11 +366,25 @@
         <dc:Bounds x="1200" y="130" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_005otac_di" bpmnElement="Flow_005otac">
-        <di:waypoint x="1300" y="380" />
+        <di:waypoint x="1560" y="380" />
         <di:waypoint x="2471" y="380" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_07ylnhn_di" bpmnElement="Activity_1hntpvr">
         <dc:Bounds x="1200" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_11o0yel_di" bpmnElement="Flow_11o0yel">
+        <di:waypoint x="1300" y="380" />
+        <di:waypoint x="1330" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0igo3dr_di" bpmnElement="Activity_0xyyh0h">
+        <dc:Bounds x="1330" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0052yhn_di" bpmnElement="Flow_0052yhn">
+        <di:waypoint x="1430" y="380" />
+        <di:waypoint x="1460" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0o4ju3y_di" bpmnElement="rejection">
+        <dc:Bounds x="1460" y="340" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
